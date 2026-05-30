@@ -31,15 +31,19 @@ def chat_log_search():
         #WIP!!!
         
 def write_user_info(user_info_input):
+    print("")
     # Use JSON
         
 def read_user_info(user):
+    print("")
     # Use JSON
         
 def write_group_info(user_group_input):
+    print("")
     # Use JSON
         
 def read_group_info(group):
+    print("")
     # Use JSON
         
 def server_console(console_input_valid):
