@@ -1,3 +1,7 @@
+#########################################################################################################################################
+#   Tutorial for json files made by GeeksforGeeks  https://www.geeksforgeeks.org/python/reading-and-writing-json-to-a-file-in-python/   #
+#########################################################################################################################################
+
 from mainclass import chat_room
 
 import socket
@@ -33,6 +37,15 @@ def write_user_info(user_info_input):
 def read_user_info(user):
     with open("user_info.txt", "r") as r_user_info:
         r_user_info.read(user)
+        
+def write_group_info(user_group_input):
+    with open("user_info.txt", "a") as w_user_info:
+        w_user_info.write(f"{user_group_input} \n")
+        #WIP!!!
+        
+def read_group_info(group):
+    with open("user_info.txt", "r") as r_user_info:
+        r_user_info.read(group)
         
 def server_console(console_input_valid):
     while console_input_valid == True:

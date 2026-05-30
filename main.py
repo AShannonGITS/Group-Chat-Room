@@ -27,13 +27,14 @@ def main():
                 print("Invalid input please try again. ")
             Valid = False
         elif UserMenuInput == "instructions" or UserMenuInput == "i":
-            print()
             program_instructions()
+            
         elif UserMenuInput == "options" or UserMenuInput == "o":
             print()
             options_menu()
             
-            OptionsMenuInput = input("")
+            
+            OptionsMenuInput = input("Please pick from one of the options: ")
             
             if OptionsMenuInput == "username" or OptionsMenuInput == "u":
                 print("")
@@ -44,7 +45,13 @@ def main():
                 
             elif OptionsMenuInput == "client" or OptionsMenuInput == "client settings" or OptionsMenuInput == "c":
                 client_input = input("")
-                print("")
+                
+                if client_input == "" or client_input == "":
+                    print("")
+                elif client_input == "" or client_input == "":
+                    print()
+                else:
+                    print("Invalid input, please try again: ")
             else:
                 print("Invalid input, please try again: ")
             Valid = False
