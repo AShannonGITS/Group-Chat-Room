@@ -1,4 +1,6 @@
 from mainfunctions import main_instructions, main_program, program_instructions, options_menu
+from client import main_client
+from server import main_server
 
 import time
 
@@ -14,9 +16,11 @@ def main():
         
         if UserMenuInput == "start" or UserMenuInput == "s":
             Valid = False
-            
+            Chatting = True
             print()
-            main_program()
+            
+            
+            
         elif UserMenuInput == "instructions" or UserMenuInput == "i":
             print()
             program_instructions()
