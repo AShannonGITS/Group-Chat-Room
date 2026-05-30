@@ -1,5 +1,5 @@
 [
-[{"name": "Adam 1"}, {"group": 1}, {"description": "My name is Adam 1, and this is a test 1!"}],
-[{"name": "Adam 2"}, {"group": 2}, {"description": "My name is Adam 2, and this is a test 2!"}],
-[{"name": "Adam 3"}, {"group": 3}, {"description": "My name is Adam 3, and this is a test 3!"}]
+{"name": "Adam 1"}, {"group": 1},
+{"name": "Adam 2"}, {"group": 2},
+{"name": "Adam 3"}, {"group": 3}
 ]
