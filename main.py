@@ -1,4 +1,4 @@
-from mainfunctions import main_instructions, main_program, program_instructions, options_menu
+from mainfunctions import main_instructions, program_instructions, options_menu
 from client import main_client
 from server import main_server
 
@@ -17,6 +17,14 @@ def main():
         UserMenuInput = input("Please pick an option from the menu: ").lower()
         
         if UserMenuInput == "start" or UserMenuInput == "s":
+            user_input = input("Would you like to start the client or server? ")
+            
+            if user_input == "client" or user_input == "c":
+                main_client()
+            elif user_input == "" or user_input == "":
+                main_server()
+            else:
+                print("Invalid input please try again. ")
             Valid = False
         elif UserMenuInput == "instructions" or UserMenuInput == "i":
             print()

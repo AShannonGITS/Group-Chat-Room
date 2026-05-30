@@ -7,9 +7,6 @@ def main_instructions():
     print("This program is a chat room that multiple clients can connect to.")
     print('First, either type "server" to run a chat room server or type "client" to connect to a server run on your local network')
 
-def main_program():
-    print("Main test 1")
-
 def program_instructions():
     print("Test 2")
     
