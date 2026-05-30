@@ -18,16 +18,23 @@ def program_instructions():
 def options_menu():
     print("Options Test 1")
     
+def client_chat(message):
+    chatting = True
+    
+    while chatting == True:
+        print()
+        #WIP
+
 def write_chat_log(message, author):
     with open("chat_log.txt", "a") as log:
         log.write(f"    By:{author} \n")
         log.write(f"{message} \n")
         
-def chat_log_search():
-    moderator_input = input("Which message would you like to find? ").lower()
+def chat_log_search(server_input):
+    server_input = input("Which message would you like to find? ").lower()
     
     with open("chat_log.txt", "r") as log_search:
-        log_search.read(moderator_input)
+        log_search.read(server_input)
         #WIP!!!
         
 def write_user_info(user_info_input):
@@ -50,7 +57,7 @@ def server_console(console_input_valid):
     while console_input_valid == True:
             server_input = input("").lower()
             
-            if server_input == "moderation tools" or server_input == "m":
+            if server_input == "chat log search" or server_input == "log search":
                 print("1")
             elif server_input == "" or server_input == "":
                 print("2")
