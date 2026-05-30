@@ -38,7 +38,23 @@ def main():
             if OptionsMenuInput == "username" or OptionsMenuInput == "u":
                 print("")
             elif OptionsMenuInput == "server" or OptionsMenuInput == "server settings" or OptionsMenuInput == "s":
-                server_input = input("")
+                console_input = True
+                
+                while console_input == True:
+                    server_input = input("")
+                    
+                    if server_input == "moderate" or server_input == "":
+                        print("1")
+                    elif server_input == "" or server_input == "":
+                        print("2")
+                    elif server_input == "" or server_input == "":
+                        print("3")
+                    elif server_input == "" or server_input == "":
+                        print("4")
+                    elif server_input == "" or server_input == "":
+                        print("5")
+                    else:
+                        print("Invalid input please try again. ")
                 
                 chat_room.server_ip = input("Input the new IP Addres you would like the server to be hosted on (Local only): ")
                 chat_room.server_port = (input("Input the new port number for the server: "))
