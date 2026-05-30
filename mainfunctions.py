@@ -33,3 +33,20 @@ def write_user_info(user_info_input):
 def read_user_info(user):
     with open("user_info.txt", "r") as r_user_info:
         r_user_info.read(user)
+        
+def server_console(console_input_valid):
+    while console_input_valid == True:
+            server_input = input("")
+            
+            if server_input == "moderate" or server_input == "":
+                print("1")
+            elif server_input == "" or server_input == "":
+                print("2")
+            elif server_input == "" or server_input == "":
+                print("3")
+            elif server_input == "" or server_input == "":
+                print("4")
+            elif server_input == "" or server_input == "":
+                print("5")
+            else:
+                print("Invalid input please try again. ")
