@@ -35,3 +35,6 @@ def write_user_info(user_info_input):
 def read_user_info(user):
     with open("user_info.txt", "r") as r_user_info:
         r_user_info.read(user)
+        
+def user_chatting(message, author, group):
+    print("temp")
