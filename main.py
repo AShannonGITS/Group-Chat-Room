@@ -21,7 +21,7 @@ def main():
             
             if user_input == "client" or user_input == "c":
                 main_client()
-            elif user_input == "" or user_input == "":
+            elif user_input == "server" or user_input == "s":
                 main_server()
             else:
                 print("Invalid input please try again. ")
