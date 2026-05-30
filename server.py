@@ -23,3 +23,10 @@ def main_server():
         print(f"Message from client: {message}")
         
         communication_socket.send(f"Message recived").encode("utf-8")
+        
+        
+        
+        
+        
+        #Server moderator controls
+        
