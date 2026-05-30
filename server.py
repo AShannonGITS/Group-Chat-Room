@@ -19,7 +19,6 @@ server.bind((HOST, PORT))
 server.listen()
 
 def main_server():
-    print("server test 1")
     while Valid == True:
         communication_socket, address = server.accept()
         print(f"Connected to {address}")

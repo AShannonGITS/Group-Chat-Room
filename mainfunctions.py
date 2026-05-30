@@ -28,6 +28,10 @@ def chat_log_search():
         #WIP!!!
         
 def write_user_info(user_info_input):
-    with open("user_info.txt", "r") as w_user_info:
+    with open("user_info.txt", "a") as w_user_info:
         w_user_info.write(f"{user_info_input} \n")
         #WIP!!!
+        
+def read_user_info(user):
+    with open("user_info.txt", "r") as r_user_info:
+        r_user_info.read(user)
