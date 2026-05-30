@@ -12,4 +12,7 @@ Valid = True
 
 def main_client():
     while Valid == True:
-        print()
+        user_ip_input = input("What ip would you like to connect to? ")
+        user_port_input = input("What is the port number? ")
+        
+        

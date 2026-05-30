@@ -2,6 +2,8 @@ from mainfunctions import main_instructions, main_program, program_instructions,
 from client import main_client
 from server import main_server
 
+from mainclass import chat_room
+
 import time
 
 exit()
@@ -30,8 +32,9 @@ def main():
             elif OptionsMenuInput == "server" or OptionsMenuInput == "server settings" or OptionsMenuInput == "s":
                 server_input = input("")
                 
-                ip_number = input("Input the new IP Addres you would like the server to be hosted on (Local only): ")
-                port_number = (input("Input the new port number for the server: "))
+                chat_room.server_ip = input("Input the new IP Addres you would like the server to be hosted on (Local only): ")
+                chat_room.server_port = (input("Input the new port number for the server: "))
+                
             elif OptionsMenuInput == "client" or OptionsMenuInput == "client settings" or OptionsMenuInput == "c":
                 client_input = input("")
                 print("")
