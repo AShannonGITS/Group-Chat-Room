@@ -6,8 +6,6 @@ from mainclass import chat_room
 
 import time
 
-main_instructions
-
 exit()
 
 def main():
