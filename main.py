@@ -16,11 +16,6 @@ def main():
         
         if UserMenuInput == "start" or UserMenuInput == "s":
             Valid = False
-            Chatting = True
-            print()
-            
-            
-            
         elif UserMenuInput == "instructions" or UserMenuInput == "i":
             print()
             program_instructions()
@@ -30,9 +25,16 @@ def main():
             
             OptionsMenuInput = input("")
             
-            if OptionsMenuInput == "" or OptionsMenuInput == "":
+            if OptionsMenuInput == "username" or OptionsMenuInput == "u":
                 print("")
-                Valid = False
+            elif OptionsMenuInput == "server" or OptionsMenuInput == "server settings" or OptionsMenuInput == "s":
+                server_input = input("")
+            elif OptionsMenuInput == "client" or OptionsMenuInput == "client settings" or OptionsMenuInput == "c":
+                client_input = input("")
+                print("")
+            else:
+                print("Invalid input, please try again: ")
+            Valid = False
         elif UserMenuInput == "exit" or UserMenuInput == "e":
             exit()
         else:
