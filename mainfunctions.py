@@ -26,3 +26,8 @@ def chat_log_search():
     with open("chat_log.txt", "r") as log_search:
         log_search.read(moderator_input)
         #WIP!!!
+        
+def write_user_info(user_info_input):
+    with open("user_info.txt", "r") as w_user_info:
+        w_user_info.write(f"{user_info_input} \n")
+        #WIP!!!

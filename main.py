@@ -1,4 +1,4 @@
-from mainfunctions import main_instructions, main_program, program_instructions, options_menu, chat_log
+from mainfunctions import main_instructions, main_program, program_instructions, options_menu
 
 import time
 
