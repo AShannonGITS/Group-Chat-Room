@@ -8,13 +8,10 @@ from mainclass import chat_room
 import time
 import socket
 
-HOST = "127.0.0.1"
-PORT = 2468
-
 Valid = True
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind((HOST, PORT))
+server.bind((chat_room.server_ip, chat_room.server_port))
 
 server.listen()
 

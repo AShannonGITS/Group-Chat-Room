@@ -29,6 +29,9 @@ def main():
                 print("")
             elif OptionsMenuInput == "server" or OptionsMenuInput == "server settings" or OptionsMenuInput == "s":
                 server_input = input("")
+                
+                ip_number = input("Input the new IP Addres you would like the server to be hosted on (Local only): ")
+                port_number = (input("Input the new port number for the server: "))
             elif OptionsMenuInput == "client" or OptionsMenuInput == "client settings" or OptionsMenuInput == "c":
                 client_input = input("")
                 print("")

@@ -8,9 +8,6 @@ from mainclass import chat_room
 import time
 import socket
 
-HOST = "127.0.0.1"
-PORT = 2468
-
 Valid = True
 
 def main_client():
