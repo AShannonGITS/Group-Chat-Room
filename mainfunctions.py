@@ -58,14 +58,14 @@ def server_console(console_input_valid):
             server_input = input("").lower()
             
             if server_input == "chat log search" or server_input == "log search":
-                print("1")
-            elif server_input == "" or server_input == "":
-                print("2")
-            elif server_input == "" or server_input == "":
-                print("3")
+                print("log search")
+            elif server_input == "edit user info" or server_input == "edit info":
+                print("edit user info")
+            elif server_input == "stop chat" or server_input == "stop":
+                print("stop chat")
             elif server_input == "" or server_input == "":
                 print("4")
-            elif server_input == "" or server_input == "":
-                print("5")
+            elif server_input == "stop server" or server_input == "server stop":
+                print("stop server")
             else:
                 print("Invalid input please try again. ")
