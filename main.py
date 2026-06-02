@@ -12,52 +12,31 @@ def main():
     main_instructions()
     
     while Valid == True:
-        UserMenuInput = input("Please pick an option from the menu: ").lower()
+        main_instructions()
         
-        if UserMenuInput == "start" or UserMenuInput == "s":
-            user_input = input("Would you like to start the client or server? ").lower()
+        user_menu_input = input("Select an option from the menu")
+        
+        if user_menu_input == "start" or user_menu_input == "s":
+            print("start main program")
             
-            if user_input == "client" or user_input == "c":
-                main_client()
-            elif user_input == "server" or user_input == "s":
+            main_program_input = input("")
+            
+            if main_program_input == "" or main_program_input == "":
                 main_server()
+            elif main_program_input == "" or main_program_input == "":
+                main_client()
             else:
-                print("Invalid input please try again. ")
-            Valid = False
-        elif UserMenuInput == "instructions" or UserMenuInput == "i":
-            program_instructions()
-            
-        elif UserMenuInput == "options" or UserMenuInput == "o":
-            print()
+                print("Invalid input, please try again. ")
+                
+        elif user_menu_input == "options" or user_menu_input == "o":
             options_menu()
-            
-            
-            OptionsMenuInput = input("Please pick from one of the options: ").lower()
-            
-            if OptionsMenuInput == "username" or OptionsMenuInput == "u":
-                print("")
-            elif OptionsMenuInput == "server" or OptionsMenuInput == "server settings" or OptionsMenuInput == "s":
-                
-                chat_room.server_ip = input("Input the new IP Addres you would like the server to be hosted on (Local only): ")
-                chat_room.server_port = int(input("Input the new port number for the server: "))
-                
-            elif OptionsMenuInput == "client" or OptionsMenuInput == "client settings" or OptionsMenuInput == "c":
-                client_input = input("").lower()
-                
-                if client_input == "" or client_input == "":
-                    print("")
-                elif client_input == "" or client_input == "":
-                    print()
-                else:
-                    print("Invalid input, please try again: ")
-            else:
-                print("Invalid input, please try again: ")
-            Valid = False
-        elif UserMenuInput == "exit" or UserMenuInput == "e":
+            print("options menu")
+        elif user_menu_input == "instructions" or user_menu_input == "i":
+            program_instructions()
+        elif user_menu_input == "exit" or user_menu_input == "e":
             exit()
         else:
-            print("Invalid input, please try again: ")
-            Valid = True
+            print("Invalid Input, please try again. ")
             
     
     
