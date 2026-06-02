@@ -10,9 +10,9 @@ import socket
 
 Valid = True
 
+chatlog = "chat_log.txt"
+userinfo = "user_info.json"
+
 def main_client():
     while Valid == True:
-        user_ip_input = input("What IP Address would you like to connect to? ")
-        user_port_input = input("What port number would you like to connect to? ")
-        
-        
+        print("Temp")

@@ -36,12 +36,15 @@ def main():
                 
                 print("Please input the new IP address for the server to broadcast from")
                 print()
+                time.sleep(0.5)
                 print("For testing purposes you can use '127.0.0.1' to have the program work with only 1 computer")
                 print("If you want to test it with multiple computers, type the IP address of the computer that is going to host the server")
                 print()
+                time.sleep(0.5)
                 print("To find you IP address, open command prompt, then type 'ipconfig' ")
                 print("Next, find the address that reads 'IPv4 Address' under the type of connection your are using. (Wifi or Ethernet)")
                 print()
+                time.sleep(0.5)
                 print("Default IP Addres: 127.0.0.1")
                 
                 new_ip_input = input()
@@ -53,6 +56,9 @@ def main():
                 print("If you do not know what a port number is, then leave it default")
                 print()
                 print("Default port number: 2468")
+                
+                new_port_number = int(input())
+                chat_room.server_port = new_port_number
             else:
                 print("Invalid input, please try again. ")
             

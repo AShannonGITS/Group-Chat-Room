@@ -10,23 +10,17 @@ import socket
 
 Valid = True
 
+chatlog = "chat_log.txt"
+userinfo = "user_info.json"
+
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
 server.bind((chat_room.server_ip, chat_room.server_port))
+
 
 server.listen()
 
 def main_server():
     while Valid == True:
-        communication_socket, address = server.accept()
-        print(f"Connected to {address}")
-        message = communication_socket.recv(1024).decode("utf-8")
-        print(f"Message from client: {message}")
-        
-        communication_socket.send(f"Message recived").encode("utf-8")
-        
-        
-        
-        
-        
-        #Server moderator controls
-        
+        print("Temp")

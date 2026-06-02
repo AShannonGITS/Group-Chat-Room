@@ -29,42 +29,6 @@ class chat_room:
     #Sets server port number
     @server_port.setter
     def server_port(self, new_port):
+        #Rework for verification WIP!!
         if len(new_port) > 0 and len(new_port) < 6:
             self._server_port = new_port
-    
-    #Gets usernames
-    @property
-    def username(self):
-        return self._username
-    
-    #Sets usernames
-    @username.setter
-    def username(self, new_username):
-        if len(new_username) > 0:
-            self._username = new_username
-        else:
-            print("Invalid username, please try again. ")
-    
-    #Gets user info
-    @property
-    def info(self):
-        return self._info
-    
-    #sets user info
-    @info.setter
-    def info(self, new_info):
-        if isinstance(new_info, str) and len(new_info) > 0:
-            self._info = new_info
-        else:
-            print("Invalid input, please try again. ")
-     
-    #Gets user group       
-    @property
-    def group_list(self):
-        return self._group_list
-    
-    #Sets user group
-    @group_list.setter
-    def group_list(self, new_group_list):
-        print("WIP")
-        #WIP!!
