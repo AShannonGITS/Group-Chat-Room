@@ -7,11 +7,11 @@ from mainclass import chat_room
 import time
 
 def main():
-    Valid = True
+    Valid = False
     
     main_instructions()
     
-    while Valid == True:
+    while Valid == False:
         main_instructions()
         
         user_menu_input = input("Select an option from the menu").lower()
@@ -23,10 +23,15 @@ def main():
             
             if main_program_input == "server" or main_program_input == "s":
                 main_server()
+                
+                Valid = True
             elif main_program_input == "client" or main_program_input == "c":
                 main_client()
+                
+                Valid = True
             else:
                 print("Invalid input, please try again. ")
+                Valid = False
         elif user_menu_input == "options" or user_menu_input == "o":
             options_menu()
             
@@ -36,15 +41,15 @@ def main():
                 
                 print("Please input the new IP address for the server to broadcast from")
                 print()
-                time.sleep(0.5)
+                time.sleep(0.25)
                 print("For testing purposes you can use '127.0.0.1' to have the program work with only 1 computer")
                 print("If you want to test it with multiple computers, type the IP address of the computer that is going to host the server")
                 print()
-                time.sleep(0.5)
+                time.sleep(0.25)
                 print("To find you IP address, open command prompt, then type 'ipconfig' ")
                 print("Next, find the address that reads 'IPv4 Address' under the type of connection your are using. (Wifi or Ethernet)")
                 print()
-                time.sleep(0.5)
+                time.sleep(0.25)
                 print("Default IP Addres: 127.0.0.1")
                 
                 new_ip_input = input()
