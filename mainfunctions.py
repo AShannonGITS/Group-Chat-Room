@@ -3,13 +3,7 @@
 #   Tutorial for datetime made by w3schools https://www.w3schools.com/python/python_datetime.asp                                        #
 #########################################################################################################################################
 
-from mainclass import chat_room
-
 from datetime import datetime
-
-import socket
-import time
-import json
 
 def main_instructions():
     print("This program is a chat room that multiple clients can connect to.")

@@ -74,12 +74,28 @@ class chat_room:
                 pass
    
     def save_user(self, user):
+        #os files and json file tutorial by w3schools
+        
         user_info_file = "user_info.json"
         
-        #os files and json file tutorial by w3schools
         if not os.path.exists(user_info_file):
             with open(user_info_file, "w") as info_file:
                 json.dump({user: []}, info_file, indent = 4)
                 
         with open(user_info_file, "r") as info_file:
             json_data = json.load(info_file)
+            
+        file_exist = False
+        
+        for user_existing in json_data["users"]:
+            if user_existing["username"] == chat_room.username:
+                exist = True
+                
+        if not file_exist:
+            json_data["users"].append({"username": user.username})
+            
+        with open(user_info_file, "w") as info_file:
+            json.dump(json_data, info_file, indent = 4)
+            
+    def get_usernames(self):
+        return [user.username for user in self.users]
