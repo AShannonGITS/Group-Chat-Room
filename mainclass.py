@@ -14,7 +14,7 @@ class User:
 
 class chat_room:
     
-    def __init__(self, server_ip, server_port, username, client_socket):
+    def __init__(self, server_ip, server_port):
 
         self._server_ip = server_ip
         self._server_port = server_port
@@ -76,7 +76,7 @@ class chat_room:
                 pass
    
     def save_user(self, user):
-        #os files and json file tutorial by w3schools
+        #OS and json files tutorial by w3schools
         
         user_info_file = "user_info.json"
         
