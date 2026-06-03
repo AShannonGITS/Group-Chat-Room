@@ -25,7 +25,7 @@ def main_server():
     host_name = input("Enter the name of the owner of the server: ")
     hosting_user = chat_room(host_name, "N/A", "N/A")
     
-    chat_room.save_user_info(host_name)
+    chat_room.save_user_info(hosting_user)
     
     receive_thread = threading.Thread(target = receive_connections, daemon = True)
     receive_thread.start()
@@ -36,13 +36,18 @@ def main_server():
 def client_handling(client):
     Valid = True
     
-    
-    #WIP!!!
     while Valid == True:
         try:
             message = client.recv(1024).decode()
-            
             print(message)
+            
+            username = "Unknown username"
+            
+            for user in chat_room.users:
+                if user.client_socket == client:
+                    username = user.username
+                    
+            chat_room.broadcast(message)
         except:
             exit()
             
@@ -77,5 +82,5 @@ def server_chat(host_name):
         
         write_chat_log(message, host_name)
         
-        chat_room.broastcast
+        chat_room.broadcast(chat_log_message)
         

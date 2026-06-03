@@ -4,16 +4,11 @@
 #   Threading tutorial made by (PLACE LINK HERE!)   #
 ##############################################################################################################
 
-from mainclass import chat_room
-
 import time
 import socket
 import threading
 
 Valid = True
-
-chatlog = "chat_log.txt"
-userinfo = "user_info.json"
 
 def main_client():
     while Valid == True:

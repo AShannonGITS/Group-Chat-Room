@@ -6,6 +6,11 @@
 import socket
 import json
 import os
+class User:
+    def __init__(self, username, client_socket):
+        self.username = username
+        self.client_socket = client_socket
+
 
 class chat_room:
     
@@ -13,11 +18,8 @@ class chat_room:
 
         self._server_ip = server_ip
         self._server_port = server_port
-        self._username = username
         
-        self.client_socket = client_socket
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        
         self.users = []
     
     #Gets server IP address
@@ -66,7 +68,7 @@ class chat_room:
                 return user
         return user
 
-    def broastcast(self, message):
+    def broadcast(self, message):
         for user in self.users:
             try:
                 user.client_socket.send(message.encode(1024))
