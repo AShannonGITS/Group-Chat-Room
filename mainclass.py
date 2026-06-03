@@ -1,12 +1,10 @@
 class chat_room:
     
-    def __init__(self, username, info, group_list, name_list, server_ip, server_port):
-        self._username = username
-        self._info = info
-        self._group_list = group_list
-        self._name_list = name_list
+    def __init__(self, server_ip, server_port, username):
+
         self._server_ip = server_ip
         self._server_port = server_port
+        self._username = username
     
     #Gets server IP address
     @property
@@ -16,7 +14,7 @@ class chat_room:
     #Sets server IP address
     @server_ip.setter
     def server_ip(self, new_ip):
-        if len(new_ip) > 0 and len(new_ip) < 15:
+        if len(new_ip) > 0 and len(new_ip) <= 15:
             self._server_ip = new_ip
         else:
             print("Invalid IP Address, please try again")

@@ -1,8 +1,11 @@
 #########################################################################################################################################
 #   Tutorial for json files made by GeeksforGeeks  https://www.geeksforgeeks.org/python/reading-and-writing-json-to-a-file-in-python/   #
+#   Tutorial for datetime made by w3schools https://www.w3schools.com/python/python_datetime.asp                                        #
 #########################################################################################################################################
 
 from mainclass import chat_room
+
+from datetime import datetime
 
 import socket
 import time
@@ -17,3 +20,10 @@ def program_instructions():
     
 def options_menu():
     print("Options Test 1")
+    
+def write_chat_log(message, author):
+    #From w3schools
+    time_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    with open("chat_log.txt", "a") as chat_log:
+        chat_log.write(f"[{time_stamp}] {author} {message}")
