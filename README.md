@@ -1,6 +1,15 @@
 # Group Chat Room
 This program is a group chat that runs on the local network that multiple clients can connect to.
 
+## Citations
+This project uses the following libraries and assets.
+
+## Tutorials, Documentation, and Code Referenced
+- [Python Sockets Tutorial | Python Sockets Simply Explained](https://www.youtube.com/watch?v=YwWfKitB8aA) by NeuralNine
+- [Python Sockets Tutorial | Python Socket Programming Tutorial](https://www.youtube.com/watch?v=3QiPPX-KeSc) by Tech With Tim
+- [JSON file handling | Reading and Writing JSON to a File in Python](https://www.geeksforgeeks.org/python/reading-and-writing-json-to-a-file-in-python/) by GeeksforGeeks
+- [Tutorial for data and time stamping | Python Datetime](https://www.w3schools.com/python/python_datetime.asp) by W3Schools
+- [Tutorial for threading | Python Threading Explained in 8 Minutes](https://www.youtube.com/watch?v=A_Z1lgZLSNc) by NeuralNine
 
 ## Videos
 - [Code Demo]()
