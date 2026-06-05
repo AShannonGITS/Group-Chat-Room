@@ -8,23 +8,16 @@ import threading
 from mainclass import chatroom, User
 from mainfunctions import write_chat_log
 
-#Run the main monitoring system for the logs
+#Recives messages from the clients and logs them
 def handle_client(client):
     Valid = True
     
     while Valid == True:
         try:
             message = client.recv(1024).decode()
-
             print(message)
 
-            username = "N/A"
-            for user in chatroom.users:
-                if user.client_socket == client:
-                    username = user.username
-
             write_chat_log(message)
-
             chatroom.broadcast(message)
         except:
             Valid = False

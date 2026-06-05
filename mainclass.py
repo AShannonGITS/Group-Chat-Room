@@ -11,7 +11,6 @@ class User:
         self.username = username
         self.client_socket = client_socket
 
-
 class ChatRoom:
     def __init__(self, server_ip = "127.0.0.1", server_port = 2468):
         self._server_ip = server_ip

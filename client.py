@@ -64,7 +64,6 @@ def main_client():
         return
 
     receive_thread = threading.Thread(target=receive_messages, args=(client,))
-
     send_thread = threading.Thread(target=send_messages, args=(client,))
 
     receive_thread.start()
