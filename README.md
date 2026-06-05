@@ -2,7 +2,8 @@
 This program is a group chat that runs on the local network that multiple clients can connect to.
 
 # Instructions 
-I would recommend you read the instructions inside the program first.
+If you can running this program on one computer use the defaut options.  If you planning to test this with multiple computers, change the settings on the server computer to that computer's IP address.
+The instructions inside the program will explain how to do that.
 
 ## Tutorials, Documentation, and Code Referenced
 - [Python Sockets Tutorial | Python Sockets Simply Explained](https://www.youtube.com/watch?v=YwWfKitB8aA) by NeuralNine
