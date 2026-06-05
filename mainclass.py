@@ -55,7 +55,7 @@ class ChatRoom:
     def add_user(self, user):
         self.users.append(user)
 
-    #Removes a users form the 'users' list.
+    #Removes a users from the 'users' list.
     def remove_user(self, client_socket):
         for user in self.users:
             if user.client_socket == client_socket:
