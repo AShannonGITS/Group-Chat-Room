@@ -44,7 +44,7 @@ def receive_connections():
     while Valid == True:
         client, address = chatroom.server.accept()
 
-        print(f"Connected to {address}")
+        print(f"A client has connect from {address}")
 
         client.send("USERNAME".encode())
         username = client.recv(1024).decode()
