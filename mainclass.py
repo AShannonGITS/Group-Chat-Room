@@ -13,8 +13,8 @@ class User:
 
 class ChatRoom:
     def __init__(self, server_ip = "127.0.0.1", server_port = 2468):
-        self._server_ip = _server_ip
-        self._server_port = _server_port
+        self._server_ip = server_ip
+        self._server_port = server_port
 
         self.users = []
 
