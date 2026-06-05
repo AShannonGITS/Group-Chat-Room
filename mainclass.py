@@ -65,7 +65,7 @@ class ChatRoom:
 
         return None
 
-    #WIP!!
+    #Send messages to all users
     def broadcast(self, message):
         for user in self.users:
             try:

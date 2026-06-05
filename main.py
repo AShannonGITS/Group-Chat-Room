@@ -1,10 +1,8 @@
 from mainfunctions import main_instructions, program_instructions, server_instructions, client_instructions, options_menu
-
 from client import main_client
 from server import main_server
 
 from mainclass import chatroom
-
 
 import time
 
@@ -51,11 +49,10 @@ def main():
 
                 try:
                     new_port = int(input("New Port: "))
-
                     chatroom.server_port = new_port
 
                     print("Port updated.")
-                except ValueError:
+                except:
                     print("Invalid port number. Please try again. ")
             else:
                 print("Invalid selection. Please try again. ")
