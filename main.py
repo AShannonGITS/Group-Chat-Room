@@ -1,4 +1,4 @@
-from mainfunctions import main_instructions, program_instructions, options_menu
+from mainfunctions import main_instructions, program_instructions, server_instructions, client_instructions, options_menu
 
 from client import main_client
 from server import main_server
@@ -8,30 +8,26 @@ from mainclass import chatroom
 
 import time
 
-"""
-
-"""
-
 def main():
     Valid = False
-    
-    main_instructions()
     
     while Valid == False:
         main_instructions()
         
-        user_menu_input = input("Select an option from the menu").lower()
+        user_menu_input = input("Select an option from the menu: ").lower()
         
         if user_menu_input == "start" or user_menu_input == "s":
-            print("start main program")
+            print("Pick either 'server' or 'client':")
             
             main_program_input = input("").lower()
             
             if main_program_input == "server" or main_program_input == "s":
+                server_instructions()
                 main_server()
                 
                 Valid = True
             elif main_program_input == "client" or main_program_input == "c":
+                client_instructions()
                 main_client()
                 
                 Valid = True
@@ -41,7 +37,7 @@ def main():
         elif user_menu_input == "options" or user_menu_input == "o":
             options_menu()
             
-            options_menu_input = input("Select an option from the menu: ").lower()
+            options_menu_input = input("Type either 'ip' or 'port': ").lower()
             
             if options_menu_input == "ip" or options_menu_input == "i":
                 print(f"\nCurrent IP: {chatroom.server_ip}")
@@ -66,6 +62,7 @@ def main():
             
         elif user_menu_input == "instructions" or user_menu_input == "i":
             program_instructions()
+            time.sleep(0.5)
         elif user_menu_input == "exit" or user_menu_input == "e":
             exit()
         else:

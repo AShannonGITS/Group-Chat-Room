@@ -76,7 +76,7 @@ def server_chat(server_name):
 def main_server():
     chatroom.start_server()
 
-    server_name = input("Server name: ")
+    server_name = input("Your username name: ")
 
     receive_thread = threading.Thread(target=receive_connections, daemon=True)
     receive_thread.start()

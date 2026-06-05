@@ -1,7 +1,7 @@
 ##############################################################################################################
 #   Python Socket Programming Tutorial made by "Tech With Tim" https://www.youtube.com/watch?v=3QiPPX-KeSc   #
 #   Python Sockets Simply Explained made by "NeuralNine" https://www.youtube.com/watch?v=YwWfKitB8aA         #
-#   Threading tutorial made by (PLACE LINK HERE!)   #
+#   Threading tutorial made by "NeuralNine" https://www.youtube.com/watch?v=A_Z1lgZLSNc                      #
 ##############################################################################################################
 
 import socket
