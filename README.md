@@ -14,5 +14,5 @@ The instructions inside the program will explain how to do that.
 - [Tutorial for threading | Python Threading Explained in 8 Minutes](https://www.youtube.com/watch?v=A_Z1lgZLSNc) by NeuralNine
 
 ## Videos
-- [Code Demo](https://youtu.be/8op5tPsMpwk)
+- [Code Demo](https://youtu.be/o0tk4zA_v28)
 - [Code Walkthrough]()
