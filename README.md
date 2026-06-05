@@ -15,4 +15,4 @@ The instructions inside the program will explain how to do that.
 
 ## Videos
 - [Code Demo](https://youtu.be/o0tk4zA_v28)
-- [Code Walkthrough]()
+- [Code Walkthrough](https://youtu.be/9OGOg1Q_hME)
