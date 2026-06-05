@@ -2,9 +2,15 @@ from mainfunctions import main_instructions, program_instructions, options_menu
 from client import main_client
 from server import main_server
 
-from mainclass import chat_room
+from mainclass import chatroom
+from server import main_server
+from client import main_client
 
 import time
+
+"""
+
+"""
 
 def main():
     Valid = False
@@ -37,35 +43,26 @@ def main():
             
             options_menu_input = input("Select an option from the menu: ").lower()
             
-            if options_menu_input == "ip" or options_menu_input == "ip address" or options_menu_input == "i":
-                
-                print("Please input the new IP address for the server to broadcast from")
-                print()
-                time.sleep(0.25)
-                print("For testing purposes you can use '127.0.0.1' to have the program work with only 1 computer")
-                print("If you want to test it with multiple computers, type the IP address of the computer that is going to host the server")
-                print()
-                time.sleep(0.25)
-                print("To find you IP address, open command prompt, then type 'ipconfig' ")
-                print("Next, find the address that reads 'IPv4 Address' under the type of connection your are using. (Wifi or Ethernet)")
-                print()
-                time.sleep(0.25)
-                print("Default IP Addres: 127.0.0.1")
-                
-                new_ip_input = input()
-                chat_room.server_ip = new_ip_input
-            elif options_menu_input == "port" or options_menu_input == "port number" or options_menu_input == "p":
-                print("Please input the port number you want the program to broadcast to")
-                print("Make sure the the port number is not one that is used already")
-                print()
-                print("If you do not know what a port number is, then leave it default")
-                print()
-                print("Default port number: 2468")
-                
-                new_port_number = int(input())
-                chat_room.server_port = new_port_number
+            if options_menu_input == "ip" or options_menu_input == "i":
+                print(f"\nCurrent IP: {chatroom.server_ip}")
+
+                new_ip = input("New IP Address: ")
+                chatroom.server_ip = new_ip
+
+                print("IP updated.")
+            elif options_menu_input == "port" or options_menu_input == "p":
+                print(f"\nCurrent Port: {chatroom.server_port}")
+
+                try:
+                    new_port = int(input("New Port: "))
+
+                    chatroom.server_port = new_port
+
+                    print("Port updated.")
+                except ValueError:
+                    print("Invalid port number. Please try again. ")
             else:
-                print("Invalid input, please try again. ")
+                print("Invalid selection. Please try again. ")
             
         elif user_menu_input == "instructions" or user_menu_input == "i":
             program_instructions()

@@ -3,84 +3,90 @@
 #   "Python Sockets Simply Explained" made by "NeuralNine" https://www.youtube.com/watch?v=YwWfKitB8aA         #
 ################################################################################################################
 
-from mainclass import chat_room
-
-from mainfuntions import write_chat_log
-
-import time
-import socket
 import threading
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-
-server.bind((chat_room.server_ip, chat_room.server_port))
+from mainclass import room, User
+from mainfunctions import write_chat_log
 
 
-server.listen()
-
-def main_server():
-    chat_room.start_server()
-    
-    host_name = input("Enter the name of the owner of the server: ")
-    hosting_user = chat_room(host_name, "N/A", "N/A")
-    
-    chat_room.save_user_info(hosting_user)
-    
-    receive_thread = threading.Thread(target = receive_connections, daemon = True)
-    receive_thread.start()
-    
-    print("Server started!")
-    server_chat(host_name)
-    
-def client_handling(client):
+def handle_client(client):
     Valid = True
     
     while Valid == True:
         try:
             message = client.recv(1024).decode()
+
+            if not message:
+                break
+
             print(message)
-            
-            username = "Unknown username"
-            
-            for user in chat_room.users:
+
+            username = "Unknown"
+
+            for user in room.users:
                 if user.client_socket == client:
                     username = user.username
-                    
-            chat_room.broadcast(message)
+                    break
+
+            write_chat_log(message, username)
+
+            room.broadcast(message)
         except:
-            exit()
-            
+            Valid = False
+
+    user = room.remove_user(client)
+
+    if user:
+        print(f"{user.username} disconnected.")
+        room.broadcast(f"{user.username} left the chat.")
+
+    client.close()
+
+
 def receive_connections():
     Valid = True
     
     while Valid == True:
-        client, address = chat_room.server.accept()
-        
-        print(f"Client '{address}' has connected.")
-        client.send("username".encode())
-        
+        client, address = room.server.accept()
+
+        print(f"Connected to {address}")
+
+        client.send("USERNAME".encode())
         username = client.recv(1024).decode()
-        user = chat_room(username)
-        
-        chat_room.add_user(user)
-        chat_room.save_user_info(user)
-        
-        chat_room.broadcast(f"{username} has joined the chat!")
-        
-        thread = threading.Thread(target = client_handling, args = (client,))
+        user = User(username, client)
+
+        room.add_user(user)
+        room.broadcast(f"{username} joined the chat.")
+
+        thread = threading.Thread(target=handle_client, args=(client,))
         thread.start()
-        
-def server_chat(host_name):
+
+
+def server_chat(server_name):
     Valid = True
     
     while Valid == True:
         message = input()
-            
-        chat_log_message = (f"{host_name}: {message}")
-        print(chat_log_message)
-        
-        write_chat_log(message, host_name)
-        
-        chat_room.broadcast(chat_log_message)
-        
+
+        if message.strip() == "":
+            continue
+
+        full_message = f"{server_name}: {message}"
+        print(full_message)
+
+        write_chat_log(message, server_name)
+        room.broadcast(full_message)
+
+
+def main_server():
+    room.start_server()
+
+    server_name = input("Server name: ")
+
+    receive_thread = threading.Thread(target=receive_connections, daemon=True)
+    receive_thread.start()
+
+    print("\nServer chat enabled.")
+    print("Clients may now connect.\n")
+
+    server_chat(server_name)
