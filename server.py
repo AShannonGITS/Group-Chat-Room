@@ -78,7 +78,7 @@ def main_server():
 
     server_name = input("Your username name: ")
 
-    receive_thread = threading.Thread(target=receive_connections, daemon=True)
+    receive_thread = threading.Thread(target=receive_connections, daemon = True)
     receive_thread.start()
 
     print("\nServer chat enabled.")

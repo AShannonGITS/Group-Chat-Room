@@ -40,7 +40,7 @@ class ChatRoom:
     #sets the server port number
     @server_port.setter
     def server_port(self, new_port):
-        if 1 <= new_port or new_port <= 65535:
+        if 1 <= new_port <= 65535:
             self._server_port = new_port
         else:
             print("Invalid port number. Please try again")
