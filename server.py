@@ -23,7 +23,7 @@ def handle_client(client):
                 if user.client_socket == client:
                     username = user.username
 
-            write_chat_log(message, username)
+            write_chat_log(message)
 
             chatroom.broadcast(message)
         except:
@@ -69,7 +69,7 @@ def server_chat(server_name):
         full_message = f"{server_name}: {message}"
         print(full_message)
 
-        write_chat_log(message, server_name)
+        write_chat_log(message)
         chatroom.broadcast(full_message)
 
 #Runs the main server
