@@ -1,10 +1,10 @@
 from mainfunctions import main_instructions, program_instructions, options_menu
+
 from client import main_client
 from server import main_server
 
 from mainclass import chatroom
-from server import main_server
-from client import main_client
+
 
 import time
 

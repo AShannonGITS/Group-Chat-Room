@@ -1,7 +1,6 @@
-#########################################################################################################################################
-#   Tutorial for json files made by GeeksforGeeks  https://www.geeksforgeeks.org/python/reading-and-writing-json-to-a-file-in-python/   #
-#   Tutorial for datetime made by w3schools https://www.w3schools.com/python/python_datetime.asp                                        #
-#########################################################################################################################################
+####################################################################################################
+#   Tutorial for datetime made by w3schools https://www.w3schools.com/python/python_datetime.asp   #
+####################################################################################################
 
 from datetime import datetime
 

@@ -5,7 +5,7 @@
 
 import threading
 
-from mainclass import room, User
+from mainclass import chatroom, User
 from mainfunctions import write_chat_log
 
 
@@ -16,29 +16,24 @@ def handle_client(client):
         try:
             message = client.recv(1024).decode()
 
-            if not message:
-                break
-
             print(message)
 
-            username = "Unknown"
-
-            for user in room.users:
+            username = "N/A"
+            for user in chatroom.users:
                 if user.client_socket == client:
                     username = user.username
-                    break
 
             write_chat_log(message, username)
 
-            room.broadcast(message)
+            chatroom.broadcast(message)
         except:
             Valid = False
 
-    user = room.remove_user(client)
+    user = chatroom.remove_user(client)
 
     if user:
         print(f"{user.username} disconnected.")
-        room.broadcast(f"{user.username} left the chat.")
+        chatroom.broadcast(f"{user.username} left the chat.")
 
     client.close()
 
@@ -47,7 +42,7 @@ def receive_connections():
     Valid = True
     
     while Valid == True:
-        client, address = room.server.accept()
+        client, address = chatroom.server.accept()
 
         print(f"Connected to {address}")
 
@@ -55,8 +50,8 @@ def receive_connections():
         username = client.recv(1024).decode()
         user = User(username, client)
 
-        room.add_user(user)
-        room.broadcast(f"{username} joined the chat.")
+        chatroom.add_user(user)
+        chatroom.broadcast(f"{username} joined the chat.")
 
         thread = threading.Thread(target=handle_client, args=(client,))
         thread.start()
@@ -75,11 +70,11 @@ def server_chat(server_name):
         print(full_message)
 
         write_chat_log(message, server_name)
-        room.broadcast(full_message)
+        chatroom.broadcast(full_message)
 
 
 def main_server():
-    room.start_server()
+    chatroom.start_server()
 
     server_name = input("Server name: ")
 
@@ -87,6 +82,6 @@ def main_server():
     receive_thread.start()
 
     print("\nServer chat enabled.")
-    print("Clients may now connect.\n")
+    print("Clients can now connect.\n")
 
     server_chat(server_name)
