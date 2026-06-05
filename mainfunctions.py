@@ -60,4 +60,4 @@ def write_chat_log(message, author):
     time_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
     with open("chat_log.txt", "a") as chat_log:
-        chat_log.write(f"[{time_stamp}] :{message}\n")
+        chat_log.write(f"[{time_stamp}] {message}\n")
