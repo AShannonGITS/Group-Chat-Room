@@ -1,7 +1,8 @@
 # Group Chat Room
 This program is a group chat that runs on the local network that multiple clients can connect to.
 
-# Instructions I would recommend you read the instructions inside the program first.
+# Instructions 
+I would recommend you read the instructions inside the program first.
 
 ## Tutorials, Documentation, and Code Referenced
 - [Python Sockets Tutorial | Python Sockets Simply Explained](https://www.youtube.com/watch?v=YwWfKitB8aA) by NeuralNine
