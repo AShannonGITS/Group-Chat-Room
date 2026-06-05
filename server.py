@@ -8,7 +8,7 @@ import threading
 from mainclass import chatroom, User
 from mainfunctions import write_chat_log
 
-
+#Run the main monitoring system for the logs
 def handle_client(client):
     Valid = True
     
@@ -37,7 +37,7 @@ def handle_client(client):
 
     client.close()
 
-
+#Receives the connections from the client
 def receive_connections():
     Valid = True
     
@@ -56,7 +56,7 @@ def receive_connections():
         thread = threading.Thread(target=handle_client, args=(client,))
         thread.start()
 
-
+#Allow the server to send messages
 def server_chat(server_name):
     Valid = True
     
@@ -72,7 +72,7 @@ def server_chat(server_name):
         write_chat_log(message, server_name)
         chatroom.broadcast(full_message)
 
-
+#Runs the main server
 def main_server():
     chatroom.start_server()
 
