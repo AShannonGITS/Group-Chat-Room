@@ -58,7 +58,7 @@ def main_client():
 
     try:
         client.connect((ip, port))
-    except:
+    except ValueError:
         print("Unable to connect to server.")
         
         return
