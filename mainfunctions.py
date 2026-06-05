@@ -55,7 +55,7 @@ def options_menu():
     print("Default Port Number: 2468")
     print()
     
-def write_chat_log(message, author):
+def write_chat_log(message):
     #From w3schools
     time_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
