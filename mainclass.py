@@ -51,7 +51,7 @@ class ChatRoom:
 
         print(f"\nServer started on {self.server_ip}: {self.server_port}")
 
-    #Adds a users to the 'users' list, so it can be added to 'user_info.json'.
+    #Adds a users to the 'users' list
     def add_user(self, user):
         self.users.append(user)
 
