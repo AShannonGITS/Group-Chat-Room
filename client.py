@@ -9,7 +9,9 @@ import threading
 
 username = ""
 
+"""
 #Receives the message from the server
+"""
 def receive_messages(client):
     global username
 
@@ -28,7 +30,9 @@ def receive_messages(client):
             
             Valid = False
 
+"""
 #Sends the messages to the server
+"""
 def send_messages(client):
     global username
 
@@ -46,7 +50,9 @@ def send_messages(client):
             
             Valid = False
 
+"""
 #Starts and runs the main client connection to the server
+"""
 def main_client():
     global username
 

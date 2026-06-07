@@ -20,23 +20,31 @@ class ChatRoom:
 
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-
+    
+    """
     #Gets the server IP address
+    """
     @property
     def server_ip(self):
         return self._server_ip
 
+    """
     #Set the IP Address
+    """
     @server_ip.setter
     def server_ip(self, new_ip):
         self._server_ip = new_ip
 
+    """
     #Gets the server port number
+    """
     @property
     def server_port(self):
         return self._server_port
 
+    """
     #sets the server port number
+    """
     @server_port.setter
     def server_port(self, new_port):
         if 1 <= new_port <= 65535:
@@ -44,18 +52,24 @@ class ChatRoom:
         else:
             print("Invalid port number. Please try again")
 
+    """
     #Binds the server IP and port number to the program, then starts the server.
+    """
     def start_server(self):
         self.server.bind((self.server_ip, self.server_port))
         self.server.listen()
 
         print(f"\nServer started on {self.server_ip}: {self.server_port}")
 
+    """
     #Adds a users to the 'users' list
+    """
     def add_user(self, user):
         self.users.append(user)
 
+    """
     #Removes a users from the 'users' list.
+    """
     def remove_user(self, client_socket):
         for user in self.users:
             if user.client_socket == client_socket:
@@ -64,7 +78,9 @@ class ChatRoom:
 
         return None
 
+    """
     #Send messages to all users
+    """
     def broadcast(self, message):
         for user in self.users:
             try:
@@ -72,7 +88,9 @@ class ChatRoom:
             except:
                 pass
 
+    """
     #Gets the usernames from the list
+    """
     def get_usernames(self):
         return [user.username for user in self.users]
 
