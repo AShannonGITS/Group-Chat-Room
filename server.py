@@ -9,7 +9,7 @@ from mainclass import chatroom, User
 from mainfunctions import write_chat_log
 
 """
-#Recives messages from the clients and logs them
+Recives messages from the clients and logs them
 """
 def handle_client(client):
     Valid = True
@@ -33,7 +33,7 @@ def handle_client(client):
     client.close()
 
 """
-#Receives the connections from the client
+Receives the connections from the client
 """
 def receive_connections():
     Valid = True
@@ -54,7 +54,7 @@ def receive_connections():
         thread.start()
         
 """
-#Allow the server to send messages
+Allow the server to send messages
 """
 def server_chat(server_name):
     Valid = True
@@ -72,7 +72,7 @@ def server_chat(server_name):
         chatroom.broadcast(full_message)
         
 """
-#Runs the main server
+Runs the main server
 """
 def main_server():
     chatroom.start_server()

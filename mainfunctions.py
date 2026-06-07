@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 """
-# This displays the main menu instructions.
+This displays the main menu instructions.
 """
 def main_instructions():
     print("-----------------")
@@ -20,7 +20,7 @@ def main_instructions():
 
 
 """
-# This displays the program instrustions.
+This displays the program instrustions.
 """
 def program_instructions():
     print("This progam is a group chat that is run on the local network.")
@@ -36,7 +36,7 @@ def program_instructions():
     print("For the port number, either leave it as default if you have not used that port number. Or change it if that port number is already used.")
 
 """
-# This displays the server instructions.
+This displays the server instructions.
 """ 
 def server_instructions():
     time.sleep(0.5)
@@ -46,7 +46,7 @@ def server_instructions():
     print("Pick the username you would like to use when chatting.")
 
 """
-# This displays the client instructions.
+This displays the client instructions.
 """     
 def client_instructions():
     time.sleep(0.5)
@@ -57,7 +57,7 @@ def client_instructions():
     print()
 
 """
-# This displays the options menu.
+This displays the options menu.
 """     
 def options_menu():
     print()
@@ -73,7 +73,7 @@ def options_menu():
     print()
 
 """
-# This writes the chat history into a txt file.
+This writes the chat history into a txt file.
 """     
 def write_chat_log(message):
     #From w3schools

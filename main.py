@@ -6,13 +6,13 @@ from mainclass import chatroom
 
 import time
 
-######################################################################
-#   Group Chat Room                                                  #
-#   Author - Adam Shannon                                            #
-#   Finished - 6/5/26                                                #
-#                                                                    #
-#   This program is a group chat that is run on the local network.   #
-######################################################################  
+"""
+Title    - Group Chat Room
+Author   - Adam Shannon
+Finished - 6/5/26
+
+This program is a group chat that is run on the local network.
+"""  
 
 
 def main():
